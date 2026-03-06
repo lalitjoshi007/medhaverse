@@ -102,7 +102,7 @@ export default function WhyMedhaverse() {
                 </p>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                   <Link
-                    href="#"
+                    href="mailto:medhaverse.4.u@gmail.com?subject=Technical%20Specs%20-%20Medhaverse"
                     className="inline-block bg-primary text-white px-10 py-4 rounded-full font-bold glow-primary"
                   >
                     Get Technical Specs

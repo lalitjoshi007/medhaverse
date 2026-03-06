@@ -42,3 +42,23 @@ Animations: scroll-triggered fade-in, hover scale on cards/buttons, subtle glow,
 npm run build
 npm start
 ```
+
+## Push to GitHub (medhaverse-pvt-ltd)
+
+If you get **403 Permission denied** when pushing to `medhaverse-pvt-ltd/medhaverse`:
+
+1. **Get access** – An org owner must add your GitHub user as a collaborator with **Write** access to the repo, or add you to the organization.
+
+2. **Create a Personal Access Token (PAT)**  
+   - GitHub → **Settings** → **Developer settings** → **Personal access tokens** → **Tokens (classic)**.  
+   - **Generate new token**, enable **repo**, then copy the token.
+
+3. **Push using the token** (replace `YOUR_TOKEN` with the token you copied):
+   ```bash
+   git remote set-url origin https://medhaverse-pvt-ltd:YOUR_TOKEN@github.com/medhaverse-pvt-ltd/medhaverse.git
+   git push -u origin main
+   ```
+   To stop storing the token in the remote URL (e.g. after push works), set the remote back to:
+   ```bash
+   git remote set-url origin https://github.com/medhaverse-pvt-ltd/medhaverse.git
+   ```

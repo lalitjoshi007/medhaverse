@@ -10,10 +10,12 @@ const navLinks = [
   { href: "#founders", label: "Founders" },
 ];
 
+const CONTACT_EMAIL = "medhaverse.4.u@gmail.com";
+
 const socialIcons = [
   { href: "#", label: "Web", icon: "M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3.004.255 4.322.729M3 3v18h18" },
   { href: "#", label: "Share", icon: "M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" },
-  { href: "#", label: "Email", icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" },
+  { href: `mailto:${CONTACT_EMAIL}`, label: "Email", icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" },
 ];
 
 export default function Footer() {
@@ -105,9 +107,12 @@ export default function Footer() {
                     />
                   </svg>
                 </span>
-                <span className="text-sm text-slate-400">
-                  nexus@medhaverse.com
-                </span>
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="text-sm text-slate-400 hover:text-primary transition-colors"
+                >
+                  {CONTACT_EMAIL}
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-primary">
@@ -131,7 +136,7 @@ export default function Footer() {
                     />
                   </svg>
                 </span>
-                <span className="text-sm text-slate-400">Cyber City, BLR</span>
+                <span className="text-sm text-slate-400">D-103, 2nd Floor, West Vinod Nagar, East Delhi, Delhi-110092, New Delhi</span>
               </li>
             </ul>
           </div>

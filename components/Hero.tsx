@@ -82,7 +82,7 @@ export default function Hero() {
           </motion.div>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
             <Link
-              href="#services"
+              href="mailto:medhaverse.4.u@gmail.com?subject=Work%20With%20Us%20-%20Medhaverse"
               className="inline-flex w-full sm:w-auto justify-center px-8 py-4 glass border border-slate-600 text-white font-bold rounded-full hover:border-primary/50 transition-colors"
             >
               Work With Us
