@@ -1,10 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useCallback } from "react";
 import ScrollReveal from "./ScrollReveal";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const getImageSrc = (path: string) => (path ? `${basePath}${path}` : "");
 
 const founders = [
   {
@@ -39,7 +41,7 @@ function FounderAvatar({
 }) {
   const [imgError, setImgError] = useState(false);
   const showPhoto = imagePath && !imgError;
-  const src = imagePath ? `${basePath}${imagePath}` : "";
+  const src = getImageSrc(imagePath || "");
 
   return (
     <motion.div
@@ -49,9 +51,12 @@ function FounderAvatar({
       className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-primary/20 border-2 border-primary/40 flex items-center justify-center shrink-0 mx-auto"
     >
       {showPhoto ? (
-        <img
+        <Image
           src={src}
           alt={name}
+          width={192}
+          height={192}
+          unoptimized
           className="w-full h-full object-cover"
           onError={() => setImgError(true)}
         />
