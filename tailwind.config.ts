@@ -10,10 +10,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        "space-black": "#020617",
+        "galaxy-purple": "#6D28D9",
+        "nebula-blue": "#2563EB",
+        "ai-cyan": "#22D3EE",
+        "energy-glow": "#A78BFA",
         primary: "#5247e6",
         accent: "#facc15",
         "background-light": "#f6f6f8",
-        "background-dark": "#121121",
+        "background-dark": "#020617",
         "cosmic-blue": "#1a1935",
         "glow-violet": "#8b5cf6",
       },

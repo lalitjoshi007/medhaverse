@@ -1,5 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import ScrollAnimations from "@/components/ScrollAnimations";
+import FeatureOrbit from "@/components/FeatureOrbit";
 import About from "@/components/About";
 import Products from "@/components/Products";
 import Services from "@/components/Services";
@@ -15,14 +17,35 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <About />
-        <Products />
-        <Services />
-        <Philosophy />
-        <WhyMedhaverse />
-        <MeetFounders />
-        <CTA />
-        <Footer />
+        <ScrollAnimations>
+          <div data-scroll-section>
+            <FeatureOrbit />
+          </div>
+          <div data-scroll-section>
+            <About />
+          </div>
+          <div data-scroll-section>
+            <Products />
+          </div>
+          <div data-scroll-section>
+            <Services />
+          </div>
+          <div data-scroll-section>
+            <Philosophy />
+          </div>
+          <div data-scroll-section>
+            <WhyMedhaverse />
+          </div>
+          <div data-scroll-section>
+            <MeetFounders />
+          </div>
+          <div data-scroll-section>
+            <CTA />
+          </div>
+          <div data-scroll-section>
+            <Footer />
+          </div>
+        </ScrollAnimations>
       </main>
     </>
   );

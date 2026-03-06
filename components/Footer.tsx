@@ -20,7 +20,22 @@ const socialIcons = [
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900/50 border-t border-slate-800 pt-24 pb-12 px-6">
+    <footer className="relative border-t border-slate-800/50 pt-24 pb-12 px-6 overflow-hidden">
+      {/* Galaxy horizon + neural grid */}
+      <div
+        className="absolute inset-0 -z-10 opacity-40"
+        style={{
+          background: "radial-gradient(ellipse 80% 50% at 50% 100%, rgba(109,40,217,0.15) 0%, transparent 50%), linear-gradient(180deg, transparent 0%, rgba(2,6,23,0.95) 30%)",
+        }}
+      />
+      <div
+        className="absolute inset-0 -z-10 opacity-20"
+        style={{
+          backgroundImage: "linear-gradient(rgba(34,211,238,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,0.03) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
+      <div className="absolute bottom-0 left-0 right-0 h-32 -z-10 bg-space-black" />
       <div className="max-w-[1440px] mx-auto">
         <div className="grid md:grid-cols-4 gap-12 mb-20">
           <div className="md:col-span-2">

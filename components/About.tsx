@@ -1,7 +1,80 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 import ScrollReveal from "./ScrollReveal";
+
+const STAR_COUNT = 12;
+function MedhaHindiGlow() {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <motion.span
+      className="relative inline-block cursor-default select-none"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      {/* Floating stars around the text on hover */}
+      {Array.from({ length: STAR_COUNT }).map((_, i) => {
+        const angle = (i / STAR_COUNT) * Math.PI * 2 + (i % 2) * 0.5;
+        const dist = 70 + (i % 3) * 25;
+        const x = Math.cos(angle) * dist;
+        const y = Math.sin(angle) * dist;
+        return (
+          <motion.span
+            key={i}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 flex items-center justify-center pointer-events-none"
+            initial={{ opacity: 0, scale: 0, x: 0, y: 0 }}
+            animate={
+              hovered
+                ? {
+                    opacity: 0.85,
+                    scale: 1,
+                    x,
+                    y,
+                    transition: { duration: 0.45, delay: i * 0.035, ease: [0.25, 0.46, 0.45, 0.94] },
+                  }
+                : { opacity: 0, scale: 0, x: 0, y: 0, transition: { duration: 0.25 } }
+            }
+          >
+            <span
+              className={`w-1.5 h-1.5 rounded-full bg-ai-cyan shrink-0 ${hovered ? "animate-medha-star-twinkle" : ""}`}
+              style={{
+                boxShadow: "0 0 10px rgb(34,211,238), 0 0 20px rgba(34,211,238,0.6)",
+                ...(hovered && { animationDelay: `${i * 0.12}s` }),
+              }}
+            />
+          </motion.span>
+        );
+      })}
+      <motion.span
+        className="relative z-10 inline-block text-[120px] md:text-[160px] font-bold transition-colors duration-300"
+        animate={{
+          color: hovered ? "rgba(167, 139, 250, 0.95)" : "rgba(82, 71, 230, 0.3)",
+          textShadow: hovered
+            ? "0 0 20px rgba(34,211,238,0.8), 0 0 40px rgba(167,139,250,0.6), 0 0 60px rgba(82,71,230,0.4)"
+            : "none",
+          scale: hovered ? 1.02 : 1,
+        }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+      >
+        मेधा
+      </motion.span>
+      {/* Soft glow behind text on hover */}
+      <motion.span
+        className="absolute inset-0 -inset-8 rounded-2xl pointer-events-none -z-10"
+        animate={{
+          opacity: hovered ? 0.4 : 0,
+          scale: hovered ? 1.1 : 1,
+        }}
+        transition={{ duration: 0.35 }}
+        style={{
+          background: "radial-gradient(circle, rgba(34,211,238,0.15) 0%, rgba(167,139,250,0.1) 40%, transparent 70%)",
+          filter: "blur(20px)",
+        }}
+      />
+    </motion.span>
+  );
+}
 
 const items = [
   {
@@ -40,9 +113,7 @@ export default function About() {
                   backgroundSize: "20px 20px",
                 }}
               />
-              <span className="text-[120px] md:text-[160px] text-primary/30 font-bold select-none">
-                मेधा
-              </span>
+              <MedhaHindiGlow />
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}

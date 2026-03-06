@@ -3,9 +3,14 @@
 @tailwind utilities;
 
 :root {
+  --space-black: #020617;
+  --galaxy-purple: #6D28D9;
+  --nebula-blue: #2563EB;
+  --ai-cyan: #22D3EE;
+  --energy-glow: #A78BFA;
   --primary: #5247e6;
   --accent: #facc15;
-  --background-dark: #121121;
+  --background-dark: #020617;
   --cosmic-blue: #1a1935;
   --glow-violet: #8b5cf6;
 }
@@ -62,4 +67,25 @@ body {
 ::selection {
   background-color: rgba(82, 71, 230, 0.3);
   color: var(--primary);
+}
+
+/* Custom cursor (only for fine pointer) */
+@media (pointer: fine) {
+  html.cursor-effects-active {
+    cursor: none;
+  }
+}
+
+/* Sections clear fixed navbar when scrolled into view */
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+/* Twinkle for Medha Hindi hover stars */
+@keyframes medha-star-twinkle {
+  0%, 100% { opacity: 0.85; transform: scale(1); filter: brightness(1); }
+  50% { opacity: 1; transform: scale(1.15); filter: brightness(1.3); }
+}
+.animate-medha-star-twinkle {
+  animation: medha-star-twinkle 1.8s ease-in-out infinite;
 }
