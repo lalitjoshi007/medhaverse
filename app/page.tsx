@@ -5,6 +5,7 @@ import Products from "@/components/Products";
 import Services from "@/components/Services";
 import Philosophy from "@/components/Philosophy";
 import WhyMedhaverse from "@/components/WhyMedhaverse";
+import MeetFounders from "@/components/MeetFounders";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -19,6 +20,7 @@ export default function Home() {
         <Services />
         <Philosophy />
         <WhyMedhaverse />
+        <MeetFounders />
         <CTA />
         <Footer />
       </main>
