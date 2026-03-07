@@ -72,20 +72,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex justify-center"
         >
-          <motion.div
-            whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(34,211,238,0.4)" }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <Link
-              href="#products"
-              className="inline-flex w-full sm:w-auto justify-center px-8 py-4 bg-ai-cyan text-space-black font-bold rounded-full transition-shadow"
-              style={{ boxShadow: "0 0 30px rgba(34,211,238,0.5)" }}
-            >
-              Explore the Universe
-            </Link>
-          </motion.div>
           <motion.div
             whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(167,139,250,0.4)" }}
             whileTap={{ scale: 0.98 }}

@@ -3,6 +3,7 @@ import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import SpaceBackground from "@/components/SpaceBackground";
 import CursorEffects from "@/components/CursorEffects";
+import { EnterMedhaverseProvider } from "@/context/EnterMedhaverseContext";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -26,11 +27,13 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} font-display antialiased bg-space-black text-slate-100 min-h-screen`}
       >
-        <SpaceBackground />
-        <div className="relative z-10 min-h-screen smooth-layer">
-          {children}
-        </div>
-        <CursorEffects />
+        <EnterMedhaverseProvider>
+          <SpaceBackground />
+          <div className="relative z-10 min-h-screen smooth-layer">
+            {children}
+          </div>
+          <CursorEffects />
+        </EnterMedhaverseProvider>
       </body>
     </html>
   );

@@ -108,3 +108,73 @@ section[id] {
 .animate-medha-star-twinkle {
   animation: medha-star-twinkle 1.8s ease-in-out infinite;
 }
+
+/* Enter Medhaverse – welcome text */
+@keyframes welcome-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes welcome-sparkle {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+.welcome-float {
+  animation: welcome-float 4s ease-in-out infinite;
+}
+.welcome-sparkle {
+  animation: welcome-sparkle 1.5s ease-in-out infinite;
+}
+
+/* Enter Medhaverse – Hindu mythology inspired glowing button */
+@keyframes enter-btn-glow {
+  0%, 100% {
+    box-shadow:
+      0 0 20px rgba(245, 158, 11, 0.5),
+      0 0 40px rgba(251, 191, 36, 0.25),
+      0 0 60px rgba(139, 92, 246, 0.15),
+      inset 0 0 20px rgba(251, 191, 36, 0.08);
+  }
+  50% {
+    box-shadow:
+      0 0 28px rgba(245, 158, 11, 0.65),
+      0 0 50px rgba(251, 191, 36, 0.35),
+      0 0 80px rgba(139, 92, 246, 0.2),
+      inset 0 0 24px rgba(251, 191, 36, 0.12);
+  }
+}
+@keyframes enter-btn-shine {
+  0% { opacity: 0.6; transform: translateX(-100%); }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; transform: translateX(100%); }
+}
+.enter-medhaverse-btn {
+  background: linear-gradient(
+    135deg,
+    rgba(180, 83, 9, 0.9) 0%,
+    rgba(139, 92, 246, 0.85) 50%,
+    rgba(120, 53, 15, 0.9) 100%
+  );
+  border: 1px solid rgba(251, 191, 36, 0.5);
+  color: white;
+  animation: enter-btn-glow 2.5s ease-in-out infinite;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.enter-medhaverse-btn:hover {
+  border-color: rgba(251, 191, 36, 0.8);
+  box-shadow:
+    0 0 35px rgba(245, 158, 11, 0.7),
+    0 0 60px rgba(251, 191, 36, 0.4),
+    0 0 90px rgba(139, 92, 246, 0.25);
+}
+.animate-enter-btn-shine {
+  animation: enter-btn-shine 3s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .enter-medhaverse-btn {
+    animation: none;
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.5);
+  }
+  .animate-enter-btn-shine {
+    animation: none;
+  }
+}

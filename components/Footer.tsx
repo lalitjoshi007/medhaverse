@@ -3,11 +3,11 @@
 import Link from "next/link";
 
 const navLinks = [
-  { href: "#about", label: "About Us" },
-  { href: "#products", label: "Products" },
-  { href: "#services", label: "Services" },
-  { href: "#philosophy", label: "Philosophy" },
-  { href: "#founders", label: "Founders" },
+  { href: "/#about", label: "About Us" },
+  { href: "/#products", label: "Products" },
+  { href: "/#services", label: "Services" },
+  { href: "/#philosophy", label: "Philosophy" },
+  { href: "/#founders", label: "Founders" },
 ];
 
 const CONTACT_EMAIL = "medhaverse.4.u@gmail.com";
@@ -39,7 +39,7 @@ export default function Footer() {
       <div className="max-w-[1440px] mx-auto">
         <div className="grid md:grid-cols-4 gap-12 mb-20">
           <div className="md:col-span-2">
-            <Link href="#" className="flex items-center gap-3 mb-6">
+            <Link href="/" className="flex items-center gap-3 mb-6">
               <span className="text-primary">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

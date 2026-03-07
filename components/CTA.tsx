@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 const CONTACT_EMAIL = "medhaverse.4.u@gmail.com";
-const MAILTO = `mailto:${CONTACT_EMAIL}?subject=Medhaverse%20Enquiry`;
 
 export default function CTA() {
   return (
@@ -31,18 +30,9 @@ export default function CTA() {
             Ready to expand?
           </h2>
           <p className="text-lg md:text-xl text-white/90 mb-12 max-w-2xl mx-auto">
-            Join the leading enterprises that have already entered the Medhaverse.
-            Let&apos;s build the future together.
+            Join the leading enterprises. Let&apos;s build the future together.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-              <Link
-                href={MAILTO}
-                className="inline-flex w-full sm:w-auto justify-center px-12 py-5 bg-white text-primary font-black rounded-full text-lg shadow-2xl"
-              >
-                Enter the Medhaverse
-              </Link>
-            </motion.div>
+          <div className="flex justify-center">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
               <Link
                 href={`mailto:${CONTACT_EMAIL}?subject=Request%20Demo%20-%20Medhaverse`}
