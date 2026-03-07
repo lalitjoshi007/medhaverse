@@ -12,6 +12,7 @@ const navLinks = [
   { href: "/#services", label: "Services" },
   { href: "/#philosophy", label: "Philosophy" },
   { href: "/#founders", label: "Founders" },
+  { href: "/#members", label: "Members" },
 ];
 
 import { isDemoMode } from "@/lib/demoMode";

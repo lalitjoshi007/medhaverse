@@ -8,6 +8,7 @@ const navLinks = [
   { href: "/#services", label: "Services" },
   { href: "/#philosophy", label: "Philosophy" },
   { href: "/#founders", label: "Founders" },
+  { href: "/#members", label: "Members" },
 ];
 
 const CONTACT_EMAIL = "medhaverse.4.u@gmail.com";
