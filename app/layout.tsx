@@ -28,9 +28,9 @@ export default function RootLayout({
       >
         <SpaceBackground />
         <div className="relative z-10 min-h-screen smooth-layer">
-          <CursorEffects />
           {children}
         </div>
+        <CursorEffects />
       </body>
     </html>
   );

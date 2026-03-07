@@ -80,10 +80,11 @@ body {
   color: var(--primary);
 }
 
-/* Custom cursor (only for fine pointer) */
+/* Custom cursor (only for fine pointer) – hide default on html and all descendants so it doesn’t reappear on buttons/links */
 @media (pointer: fine) {
-  html.cursor-effects-active {
-    cursor: none;
+  html.cursor-effects-active,
+  html.cursor-effects-active * {
+    cursor: none !important;
   }
 }
 

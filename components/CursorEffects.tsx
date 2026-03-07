@@ -21,9 +21,9 @@ export default function CursorEffects() {
     if (!cursor || !trailEl) return;
 
     const handleMove = (e: MouseEvent) => {
-      setVisible(true);
       pos.current = { x: e.clientX, y: e.clientY };
       trail.current = [{ x: e.clientX, y: e.clientY }, ...trail.current].slice(0, TRAIL_LENGTH);
+      setVisible(true);
     };
 
     const handleLeave = () => setVisible(false);
@@ -44,11 +44,11 @@ export default function CursorEffects() {
     rafId = requestAnimationFrame(update);
 
     window.addEventListener("mousemove", handleMove);
-    document.body.addEventListener("mouseleave", handleLeave);
+    document.documentElement.addEventListener("mouseleave", handleLeave);
 
     return () => {
       window.removeEventListener("mousemove", handleMove);
-      document.body.removeEventListener("mouseleave", handleLeave);
+      document.documentElement.removeEventListener("mouseleave", handleLeave);
       cancelAnimationFrame(rafId);
     };
   }, []);
