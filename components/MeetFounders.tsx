@@ -88,15 +88,16 @@ export default function MeetFounders() {
           </p>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+        {/* Mobile: horizontal scroll. Desktop: 2-column grid */}
+        <div className="md:grid md:grid-cols-2 md:gap-8 lg:gap-12 md:max-w-4xl md:mx-auto flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2 -mx-6 px-6 md:overflow-visible md:pb-0 md:mx-0 md:px-0">
           {founders.map((founder, i) => (
-            <ScrollReveal key={founder.name} delay={i * 0.1}>
+            <ScrollReveal key={founder.name} delay={i * 0.1} className="shrink-0 w-[85vw] min-w-[85vw] sm:w-80 sm:min-w-80 md:w-auto md:min-w-0 snap-center">
               <motion.article
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="p-8 md:p-10 rounded-3xl glass-card border border-slate-700/50 text-center flex flex-col items-center hover:border-primary/30 transition-colors"
+                className="p-8 md:p-10 rounded-3xl glass-card border border-slate-700/50 text-center flex flex-col items-center hover:border-primary/30 transition-colors h-full"
                 style={{
                   boxShadow: "0 25px 50px -12px rgba(0,0,0,0.35), 0 0 0 1px rgba(82, 71, 230, 0.08)",
                 }}
