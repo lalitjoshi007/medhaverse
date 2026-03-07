@@ -17,10 +17,21 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
   font-family: var(--font-space-grotesk), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* GPU-friendly layers for smooth animations */
+.smooth-layer {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 /* Mandala / dot pattern */
@@ -79,6 +90,13 @@ body {
 /* Sections clear fixed navbar when scrolled into view */
 section[id] {
   scroll-margin-top: 5.5rem;
+}
+
+/* Respect reduced motion preference (smooth scroll only) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 /* Twinkle for Medha Hindi hover stars */

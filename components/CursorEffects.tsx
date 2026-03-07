@@ -62,9 +62,9 @@ export default function CursorEffects() {
     <>
       <div
         ref={cursorRef}
-        className={`pointer-events-none fixed left-0 top-0 z-[9999] w-4 h-4 -translate-x-1/2 -translate-y-1/2 rounded-full mix-blend-screen transition-opacity duration-200 ${
+        className={`pointer-events-none fixed left-0 top-0 z-[9999] w-4 h-4 -translate-x-1/2 -translate-y-1/2 rounded-full mix-blend-screen transition-opacity duration-300 ease-out ${
           visible ? "opacity-100" : "opacity-0"
-        }`}
+        } smooth-layer`}
         style={{
           boxShadow: "0 0 20px #22D3EE, 0 0 40px #A78BFA",
           background: "radial-gradient(circle, rgba(34,211,238,0.8) 0%, rgba(167,139,250,0.4) 70%, transparent)",
@@ -73,9 +73,9 @@ export default function CursorEffects() {
       />
       <div
         ref={trailRef}
-        className={`pointer-events-none fixed left-0 top-0 z-[9998] transition-opacity duration-200 ${
+        className={`pointer-events-none fixed left-0 top-0 z-[9998] transition-opacity duration-300 ease-out ${
           visible ? "opacity-100" : "opacity-0"
-        }`}
+        } smooth-layer`}
         aria-hidden
       >
         {Array.from({ length: TRAIL_LENGTH }).map((_, i) => (

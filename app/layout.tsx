@@ -27,7 +27,7 @@ export default function RootLayout({
         className={`${spaceGrotesk.variable} font-display antialiased bg-space-black text-slate-100 min-h-screen`}
       >
         <SpaceBackground />
-        <div className="relative z-10 min-h-screen">
+        <div className="relative z-10 min-h-screen smooth-layer">
           <CursorEffects />
           {children}
         </div>

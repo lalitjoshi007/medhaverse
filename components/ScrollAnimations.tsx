@@ -17,17 +17,19 @@ export default function ScrollAnimations({ children }: { children: React.ReactNo
       sections?.forEach((section) => {
         gsap.fromTo(
           section,
-          { opacity: 0, y: 60 },
+          { opacity: 0, y: 48 },
           {
             opacity: 1,
             y: 0,
-            duration: 0.8,
-            ease: "power3.out",
+            duration: 1,
+            ease: "power2.out",
+            overwrite: "auto",
             scrollTrigger: {
               trigger: section,
-              start: "top 85%",
-              end: "bottom 15%",
+              start: "top 88%",
+              end: "bottom 12%",
               toggleActions: "play none none reverse",
+              invalidateOnRefresh: true,
             },
           }
         );
