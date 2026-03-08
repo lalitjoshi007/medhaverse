@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import gsap from "gsap";
 import WarpPhase from "./WarpPhase";
 import WelcomeTextPhase from "./WelcomeTextPhase";
@@ -16,6 +16,8 @@ const TIMELINE_DURATION = 5.5; // ends after welcome + short hold, then navigate
 
 export default function EnterMedhaverseOverlay({ onComplete }: EnterMedhaverseOverlayProps) {
   const router = useRouter();
+  const pathname = usePathname();
+  const pendingCompleteRef = useRef(false);
   const [phase, setPhase] = useState<"warp" | "welcome">("warp");
   const [warpProgress, setWarpProgress] = useState(0);
   const [welcomeVisible, setWelcomeVisible] = useState(false);
@@ -25,9 +27,17 @@ export default function EnterMedhaverseOverlay({ onComplete }: EnterMedhaverseOv
   const containerRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
 
+  // Only unmount overlay after we've landed on /verse so we never flash the home screen
+  useEffect(() => {
+    if (pathname === VERSE_PATH && pendingCompleteRef.current) {
+      pendingCompleteRef.current = false;
+      onComplete();
+    }
+  }, [pathname, onComplete]);
+
   const finishAndEnterVerse = () => {
-    onComplete();
-    router.push(VERSE_PATH);
+    pendingCompleteRef.current = true;
+    router.replace(VERSE_PATH);
   };
 
   useEffect(() => {

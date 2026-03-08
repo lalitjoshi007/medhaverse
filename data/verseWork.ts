@@ -45,24 +45,4 @@ export const verseWork: VerseWorkItem[] = [
       "Intelligent Automation Suite",
     ],
   },
-  {
-    id: "medha-analytics",
-    name: "MedhaAnalytics",
-    tagline: "Cognitive patterns from data",
-    description:
-      "Deep-learning engine that extracts cognitive patterns from raw big data streams in real-time.",
-    href: "/#products",
-    iconPath: "",
-    color: "violet",
-  },
-  {
-    id: "cogni-saas",
-    name: "CogniSaaS",
-    tagline: "Workflow automation with intent",
-    description:
-      "The world's first intuitive workflow automation suite that anticipates user intent through semantic logic.",
-    href: "/#products",
-    iconPath: "",
-    color: "amber",
-  },
 ];

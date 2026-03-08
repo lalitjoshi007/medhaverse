@@ -19,7 +19,7 @@ const founders = [
   },
   {
     name: "Lalit Joshi",
-    role: "CTO",
+    role: "Chief Technical Officer",
     description:
       "Architecting the technical foundation of Medhaverse. Spearheading AI solutions, scalable systems, and the fusion of cognitive science with modern engineering.",
     image: "/founders/lalit-joshi.png",
