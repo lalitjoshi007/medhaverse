@@ -58,7 +58,7 @@ export default function VersePage() {
         </motion.div>
       </section>
 
-      {/* Solar system / Galaxy — central sun, orbiting work */}
+      {/* Solar system / Galaxy — central sun, work items on a true orbit */}
       <section className="relative py-16 md:py-24 px-4 sm:px-6 overflow-hidden">
         <div className="max-w-6xl mx-auto">
           <motion.h2
@@ -73,27 +73,26 @@ export default function VersePage() {
             Each creation orbits the core of Medha — wisdom in motion.
           </p>
 
-          {/* Decorative orbit ring — smaller on mobile so it fits in viewport */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          {/* Orbit disc: square container so orbit positions are symmetric */}
+          <div className="relative mx-auto w-[min(92vw,320px)] sm:w-[min(92vw,420px)] md:w-[min(92vw,520px)] aspect-square max-w-[520px]">
+            {/* Orbit rings — centered */}
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 48, repeat: Infinity, ease: "linear" }}
-              className="w-[min(85vw,280px)] h-[min(85vw,280px)] sm:w-[min(90vw,400px)] sm:h-[min(90vw,400px)] md:w-[min(90vw,520px)] md:h-[min(90vw,520px)] rounded-full border border-slate-700/30 border-dashed"
+              className="absolute inset-0 rounded-full border border-slate-700/30 border-dashed pointer-events-none"
             />
             <motion.div
               animate={{ rotate: -360 }}
               transition={{ duration: 64, repeat: Infinity, ease: "linear" }}
-              className="absolute w-[min(65vw,200px)] h-[min(65vw,200px)] sm:w-[min(70vw,320px)] sm:h-[min(70vw,320px)] md:w-[min(70vw,400px)] md:h-[min(70vw,400px)] rounded-full border border-ai-cyan/20"
+              className="absolute inset-[15%] rounded-full border border-ai-cyan/20 pointer-events-none"
             />
-          </div>
 
-          <div className="relative flex flex-row flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-16 min-h-[200px] sm:min-h-[280px] md:min-h-[320px]">
-            {/* Central "sun" — Medha core */}
+            {/* Central sun — exact center */}
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
-              className="relative z-10 w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full flex items-center justify-center shrink-0"
+              className="absolute left-1/2 top-1/2 z-10 w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center -translate-x-1/2 -translate-y-1/2 shrink-0"
               style={{
                 background:
                   "radial-gradient(circle at 30% 30%, rgba(34, 211, 238, 0.4), rgba(82, 71, 230, 0.3)), radial-gradient(circle, rgba(167, 139, 250, 0.2) 0%, transparent 70%)",
@@ -101,72 +100,78 @@ export default function VersePage() {
                   "0 0 60px rgba(34, 211, 238, 0.4), 0 0 100px rgba(82, 71, 230, 0.2)",
               }}
             >
-              <span className="text-white font-bold text-xs sm:text-sm md:text-base uppercase tracking-wider">
+              <span className="text-white font-bold text-[10px] sm:text-xs md:text-sm uppercase tracking-wider">
                 Medha
               </span>
             </motion.div>
 
-            {/* Orbiting work items as planets — compact on mobile */}
-            {verseWork.map((work, i) => (
-              <motion.div
-                key={work.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="relative z-10 flex flex-col items-center"
-              >
-                {work.href.startsWith("http") ? (
-                  <a
-                    href={work.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`relative block w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-xl sm:rounded-2xl overflow-hidden border-2 bg-gradient-to-br ${colorMap[work.color] ?? "from-primary/30 to-primary/10 border-primary/40"} hover:scale-105 transition-transform bg-slate-900/80`}
-                  >
-                    {work.iconPath ? (
-                      <Image
-                        src={work.iconPath}
-                        alt={work.name}
-                        fill
-                        className="object-contain p-1"
-                        sizes="(max-width: 640px) 56px, (max-width: 768px) 80px, 96px"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center text-lg sm:text-2xl font-bold text-white/80">
-                        {work.name.charAt(0)}
-                      </div>
-                    )}
-                  </a>
-                ) : (
-                  <Link
-                    href={work.href}
-                    className={`relative block w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-xl sm:rounded-2xl overflow-hidden border-2 bg-gradient-to-br ${colorMap[work.color] ?? "from-primary/30 to-primary/10 border-primary/40"} hover:scale-105 transition-transform bg-slate-900/80`}
-                  >
-                    {work.iconPath ? (
-                      <Image
-                        src={work.iconPath}
-                        alt={work.name}
-                        fill
-                        className="object-contain p-1"
-                        sizes="(max-width: 640px) 56px, (max-width: 768px) 80px, 96px"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center text-lg sm:text-2xl font-bold text-white/80">
-                        {work.name.charAt(0)}
-                      </div>
-                    )}
-                  </Link>
-                )}
-                <p className="text-center text-white font-semibold mt-2 sm:mt-3 text-xs sm:text-sm md:text-base">
-                  {work.name}
-                </p>
-                {work.nameSanskrit && (
-                  <p className="text-center text-slate-500 text-[10px] sm:text-xs mt-0.5">
-                    {work.nameSanskrit}
+            {/* Planets on orbit path — symmetric: left (180°) and right (0°) */}
+            {verseWork.map((work, i) => {
+              const angleDeg = i === 0 ? 180 : 0;
+              const leftPct = 50 + 42 * Math.cos((angleDeg * Math.PI) / 180);
+              const topPct = 50 + 42 * Math.sin((angleDeg * Math.PI) / 180);
+              return (
+                <motion.div
+                  key={work.id}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 + i * 0.1 }}
+                  className="absolute z-10 flex flex-col items-center -translate-x-1/2 -translate-y-1/2"
+                  style={{ left: `${leftPct}%`, top: `${topPct}%` }}
+                >
+                  {work.href.startsWith("http") ? (
+                    <a
+                      href={work.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`relative block w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-xl overflow-hidden border-2 bg-gradient-to-br ${colorMap[work.color] ?? "from-primary/30 to-primary/10 border-primary/40"} hover:scale-105 transition-transform bg-slate-900/80`}
+                    >
+                      {work.iconPath ? (
+                        <Image
+                          src={work.iconPath}
+                          alt={work.name}
+                          fill
+                          className="object-contain p-1"
+                          sizes="(max-width: 640px) 48px, (max-width: 768px) 64px, 80px"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-base sm:text-lg font-bold text-white/80">
+                          {work.name.charAt(0)}
+                        </div>
+                      )}
+                    </a>
+                  ) : (
+                    <Link
+                      href={work.href}
+                      className={`relative block w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-xl overflow-hidden border-2 bg-gradient-to-br ${colorMap[work.color] ?? "from-primary/30 to-primary/10 border-primary/40"} hover:scale-105 transition-transform bg-slate-900/80`}
+                    >
+                      {work.iconPath ? (
+                        <Image
+                          src={work.iconPath}
+                          alt={work.name}
+                          fill
+                          className="object-contain p-1"
+                          sizes="(max-width: 640px) 48px, (max-width: 768px) 64px, 80px"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-base sm:text-lg font-bold text-white/80">
+                          {work.name.charAt(0)}
+                        </div>
+                      )}
+                    </Link>
+                  )}
+                  <p className="text-center text-white font-semibold mt-1.5 sm:mt-2 text-[10px] sm:text-xs md:text-sm whitespace-nowrap">
+                    {work.name}
                   </p>
-                )}
-              </motion.div>
-            ))}
+                  {work.nameSanskrit && (
+                    <p className="text-center text-slate-500 text-[9px] sm:text-[10px] mt-0.5">
+                      {work.nameSanskrit}
+                    </p>
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
