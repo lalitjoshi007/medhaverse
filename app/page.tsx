@@ -8,7 +8,6 @@ import Services from "@/components/Services";
 import Philosophy from "@/components/Philosophy";
 import WhyMedhaverse from "@/components/WhyMedhaverse";
 import MeetFounders from "@/components/MeetFounders";
-import MeetOurMembers from "@/components/MeetOurMembers";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -39,9 +38,6 @@ export default function Home() {
           </div>
           <div data-scroll-section>
             <MeetFounders />
-          </div>
-          <div data-scroll-section>
-            <MeetOurMembers />
           </div>
           <div data-scroll-section>
             <CTA />

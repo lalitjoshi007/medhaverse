@@ -56,16 +56,6 @@ export const verseWork: VerseWorkItem[] = [
     color: "violet",
   },
   {
-    id: "verse-cloud",
-    name: "VerseCloud",
-    tagline: "Borderless infrastructure",
-    description:
-      "A borderless, decentralized infrastructure layer that ensures 99.99% uptime across the digital universe.",
-    href: "/#products",
-    iconPath: "",
-    color: "cyan",
-  },
-  {
     id: "cogni-saas",
     name: "CogniSaaS",
     tagline: "Workflow automation with intent",
