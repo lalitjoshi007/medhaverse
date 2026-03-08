@@ -96,17 +96,9 @@ export default function WhyMedhaverse() {
                   99.9%
                 </h3>
                 <p className="text-xl font-bold mb-6 text-white">Uptime Guaranteed</p>
-                <p className="text-slate-400 max-w-xs mb-10">
+                <p className="text-slate-400 max-w-xs">
                   Deploy with confidence onto a platform designed for infinite scale.
                 </p>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                  <a
-                    href="mailto:medhaverse.4.u@gmail.com?subject=Technical%20Specs%20-%20Medhaverse"
-                    className="inline-block bg-primary text-white px-10 py-4 rounded-full font-bold glow-primary"
-                  >
-                    Get Technical Specs
-                  </a>
-                </motion.div>
               </div>
             </motion.div>
           </ScrollReveal>
