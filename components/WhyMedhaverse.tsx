@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
 
 const features = [
@@ -101,12 +100,12 @@ export default function WhyMedhaverse() {
                   Deploy with confidence onto a platform designed for infinite scale.
                 </p>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                  <Link
+                  <a
                     href="mailto:medhaverse.4.u@gmail.com?subject=Technical%20Specs%20-%20Medhaverse"
                     className="inline-block bg-primary text-white px-10 py-4 rounded-full font-bold glow-primary"
                   >
                     Get Technical Specs
-                  </Link>
+                  </a>
                 </motion.div>
               </div>
             </motion.div>

@@ -55,9 +55,10 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-slate-400 max-w-sm mb-8 leading-relaxed">
-              Medhaverse Pvt Ltd is at the forefront of the cognitive computing
-              revolution. We unify centuries of wisdom with decades of digital
-              innovation.
+              <span className="block text-primary/90 font-medium mb-1">
+                आ नो भद्राः क्रतवो यन्तु विश्वतः
+              </span>
+              Let noble ideas come to us from every direction.
             </p>
             <div className="flex gap-4">
               {socialIcons.map((s) => (

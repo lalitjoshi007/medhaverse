@@ -88,8 +88,14 @@ export default function MeetFounders() {
           </p>
         </ScrollReveal>
 
-        {/* Mobile: horizontal scroll. Desktop: 2-column grid */}
-        <div className="md:grid md:grid-cols-2 md:gap-8 lg:gap-12 md:max-w-4xl md:mx-auto flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2 -mx-6 px-6 md:overflow-visible md:pb-0 md:mx-0 md:px-0">
+        {/* Mobile: horizontal scroll with "more founder" hint. Desktop: 2-column grid */}
+        <div className="relative">
+          {/* Mobile-only: fade on right + hint that there's another founder */}
+          <div className="md:hidden absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-l from-cosmic-blue/20 to-transparent" aria-hidden />
+          <p className="md:hidden text-center text-slate-500 text-sm mb-4">
+            Swipe to see both founders →
+          </p>
+          <div className="md:grid md:grid-cols-2 md:gap-8 lg:gap-12 md:max-w-4xl md:mx-auto flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2 -mx-6 px-6 md:overflow-visible md:pb-0 md:mx-0 md:px-0">
           {founders.map((founder, i) => (
             <ScrollReveal key={founder.name} delay={i * 0.1} className="shrink-0 w-[85vw] min-w-[85vw] sm:w-80 sm:min-w-80 md:w-auto md:min-w-0 snap-center">
               <motion.article
@@ -125,6 +131,7 @@ export default function MeetFounders() {
               </motion.article>
             </ScrollReveal>
           ))}
+          </div>
         </div>
       </div>
     </section>

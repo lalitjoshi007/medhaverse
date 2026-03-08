@@ -14,7 +14,7 @@ export default function Products() {
       <div className="max-w-[1440px] mx-auto">
         <ScrollReveal className="text-center max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-            My Work
+            Our Work
           </h2>
           <p className="text-slate-400 text-lg mb-10 leading-relaxed">
             {isDemoMode

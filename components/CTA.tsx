@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 const CONTACT_EMAIL = "medhaverse.4.u@gmail.com";
 
@@ -34,12 +33,12 @@ export default function CTA() {
           </p>
           <div className="flex justify-center">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-              <Link
+              <a
                 href={`mailto:${CONTACT_EMAIL}?subject=Request%20Demo%20-%20Medhaverse`}
                 className="inline-flex w-full sm:w-auto justify-center px-12 py-5 border-2 border-white/30 text-white font-bold rounded-full text-lg hover:bg-white/10 transition-colors"
               >
                 Request Demo
-              </Link>
+              </a>
             </motion.div>
           </div>
         </div>

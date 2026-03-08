@@ -185,7 +185,7 @@ export default function VersePage() {
             viewport={{ once: true }}
             className="text-center text-3xl md:text-4xl font-bold text-white mb-4"
           >
-            My Work
+            Our Work
           </motion.h2>
           <p className="text-center text-slate-400 mb-16 max-w-xl mx-auto">
             Products and systems built at the intersection of intelligence and craft.

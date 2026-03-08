@@ -4,10 +4,10 @@ import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect } from "react";
 
 const modules = [
-  { title: "AI Products", desc: "Intelligent systems powered by neural logic", icon: "◇" },
+  { title: "AI Driven Application", desc: "Intelligent applications powered by AI", icon: "◇" },
   { title: "SaaS Solutions", desc: "Scalable platforms for the modern enterprise", icon: "◈" },
   { title: "Technology Services", desc: "End-to-end digital transformation", icon: "⬡" },
-  { title: "Cloud Systems", desc: "Planetary-scale infrastructure", icon: "⬢" },
+  { title: "Web Experiences", desc: "Intuitive, highly animated websites, AI integrated", icon: "⬢" },
   { title: "Data Intelligence", desc: "Cognitive analytics and insights", icon: "◉" },
 ];
 

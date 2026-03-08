@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
+
+const CONTACT_EMAIL = "medhaverse.4.u@gmail.com";
 
 export default function Hero() {
   return (
@@ -78,13 +79,13 @@ export default function Hero() {
             whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(167,139,250,0.4)" }}
             whileTap={{ scale: 0.98 }}
           >
-            <Link
-              href="mailto:medhaverse.4.u@gmail.com?subject=Start%20Building%20-%20Medhaverse"
+            <a
+              href={`mailto:${CONTACT_EMAIL}?subject=Start%20Building%20-%20Medhaverse`}
               className="inline-flex w-full sm:w-auto justify-center px-8 py-4 glass border border-energy-glow/50 text-white font-bold rounded-full hover:border-energy-glow transition-colors"
               style={{ boxShadow: "0 0 20px rgba(167,139,250,0.2)" }}
             >
               Start Building
-            </Link>
+            </a>
           </motion.div>
         </motion.div>
       </div>
