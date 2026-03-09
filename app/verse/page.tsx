@@ -120,7 +120,25 @@ export default function VersePage() {
                   className="absolute z-10 flex flex-col items-center -translate-x-1/2 -translate-y-1/2"
                   style={{ left: `${leftPct}%`, top: `${topPct}%` }}
                 >
-                  {work.href.startsWith("http") ? (
+                  {work.id === "nutrino" ? (
+                    <div
+                      className={`relative block w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-xl overflow-hidden border-2 bg-gradient-to-br ${colorMap[work.color] ?? "from-primary/30 to-primary/10 border-primary/40"} bg-slate-900/80 cursor-default`}
+                    >
+                      {work.iconPath ? (
+                        <Image
+                          src={work.iconPath}
+                          alt={work.name}
+                          fill
+                          className="object-contain p-1"
+                          sizes="(max-width: 640px) 48px, (max-width: 768px) 64px, 80px"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-base sm:text-lg font-bold text-white/80">
+                          {work.name.charAt(0)}
+                        </div>
+                      )}
+                    </div>
+                  ) : work.href.startsWith("http") ? (
                     <a
                       href={work.href}
                       target="_blank"
@@ -200,7 +218,57 @@ export default function VersePage() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
               >
-                {work.href.startsWith("http") ? (
+                {work.id === "nutrino" ? (
+                  <div className="block p-8 rounded-3xl glass-card border border-slate-700/50 h-full group cursor-default">
+                    <div className="flex items-start gap-6">
+                      <div
+                        className={`relative w-16 h-16 rounded-2xl overflow-hidden shrink-0 bg-slate-900/80 bg-gradient-to-br ${colorMap[work.color] ?? "from-primary/20 to-primary/5"} border border-slate-700/50`}
+                      >
+                        {work.iconPath ? (
+                          <Image
+                            src={work.iconPath}
+                            alt={work.name}
+                            fill
+                            className="object-contain p-1.5"
+                            sizes="64px"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center text-2xl font-bold text-white/80">
+                            {work.name.charAt(0)}
+                          </div>
+                        )}
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <h3 className="text-xl font-bold text-white">
+                          {work.name}
+                        </h3>
+                        {work.nameSanskrit && (
+                          <p className="text-slate-500 text-sm mt-0.5">
+                            {work.nameSanskrit}
+                          </p>
+                        )}
+                        <p className="text-ai-cyan/90 text-sm font-medium mt-2">
+                          {work.tagline}
+                        </p>
+                        <p className="text-slate-400 mt-3 leading-relaxed">
+                          {work.description}
+                        </p>
+                        {work.features && work.features.length > 0 && (
+                          <ul className="mt-4 flex flex-wrap gap-2">
+                            {work.features.slice(0, 4).map((f, j) => (
+                              <li
+                                key={j}
+                                className="text-xs px-3 py-1 rounded-full bg-slate-800/60 text-slate-400"
+                              >
+                                {f}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ) : work.href.startsWith("http") ? (
                   <a
                     href={work.href}
                     target="_blank"
